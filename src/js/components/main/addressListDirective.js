@@ -13,10 +13,12 @@ var AddressListDirective =  BaseDirective.extend({
         this.$scope.deleteAddress = this._b('onDeleteAddress');
     },
 
-    onChangeSortCriteria:function(criteria){
-        if(criteria === this.$scope.sortCriteria){
+    onChangeSortCriteria: function(criteria) {
+        // if the user clicks the same one twice, reverse the order
+        if (criteria === this.$scope.sortCriteria) {
             this.$scope.sortReverse = !this.$scope.sortReverse;
         } else {
+            // otherwise set the criteria and assert reverse order is false
             this.$scope.sortCriteria = criteria;
             this.$scope.sortReverse = false;
         }

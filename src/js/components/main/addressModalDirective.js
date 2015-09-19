@@ -5,18 +5,6 @@ var AddressModalDirective = BaseDirective.extend({
     },
 
     defineScope: function() {
-
-        this.$scope.changeSortCriteria = this._b('onChangeSortCriteria');
-        this.$scope.deleteAddress = this._b('onDeleteAddress');
-    },
-
-    onChangeSortCriteria: function(criteria) {
-        if (criteria === this.$scope.sortCriteria) {
-            this.$scope.sortReverse = !this.$scope.sortReverse;
-        } else {
-            this.$scope.sortCriteria = criteria;
-            this.$scope.sortReverse = false;
-        }
     },
 
     onModalReady:function(){
@@ -25,7 +13,6 @@ var AddressModalDirective = BaseDirective.extend({
     },
 
     onModalComplete:function(){
-        console.log(' on modal complete');
 
         if(this.$scope.add){
             this.$scope.$applyAsync(function(scope){

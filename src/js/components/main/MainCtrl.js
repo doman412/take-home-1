@@ -13,7 +13,6 @@ var MainController = BaseController.extend({
         this.$scope.changeEditing = this._b('onChangeEditing');
         this.$scope.reloadAddressesFromFile = this._b('reloadAddressesFromFile');
         this.addressModel.fetchAddresses().then(this._b('onAddressesLoaded'), this._b('onAddressesLoadFailed'));
-        this.$scope.addAddress = this._b('onAddAddress');
         this.$scope.exportToJSON = this._b('exportToJSON');
     },
 
@@ -26,12 +25,9 @@ var MainController = BaseController.extend({
         this.addressModel.reloadAddressesFromFile().then(this._b('onAddressesLoaded'), this._b('onAddressesLoadFailed'));
     },
 
-    onAddAddress: function() {
-        this.addressModel.addAddress();
-    },
-
     // event handlers
     onAddressesLoaded: function(addresses) {
+        // apply changes async to avoid digest crashes
         this.$scope.$applyAsync(function(scope) {
             scope.addresses = this.addressModel.addresses;
         }.bind(this));
@@ -43,13 +39,14 @@ var MainController = BaseController.extend({
     },
 
     exportToJSON: function() {
+        // never had to use this, so I had to look it up
         var a = $('<a></a>').appendTo('body').css({display:'none'}),
             data = window.localStorage.getItem('duxterAddressBook'),
             blob = new Blob([data], {type:'octet/stream'}),
             url = window.URL.createObjectURL(blob);
 
         a.attr('href',url);
-        a.attr('download', 'address-book.json');
+        a.attr('download', 'addresses.json');
         a[0].click();
         window.URL.revokeObjectURL(url);
         a.remove();

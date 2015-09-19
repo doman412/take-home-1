@@ -9,7 +9,7 @@ var BaseDirective = BaseClass.extend({
     this.initialize.apply(this,arguments);
 
     // bind the destroy event with this class
-    this.$scope.$on('$destroy',this.destroy.bind(this));
+    this.$scope.$on('$destroy',this._b('destroy'));
 
     // call the second lifecycle method
     this.defineListeners();

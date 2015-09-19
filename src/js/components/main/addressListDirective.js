@@ -8,7 +8,6 @@ var AddressListDirective =  BaseDirective.extend({
     },
 
     defineScope:function(){
-        console.log(this.$scope.addresses);
 
         this.$scope.changeSortCriteria = this._b('onChangeSortCriteria');
         this.$scope.deleteAddress = this._b('onDeleteAddress');

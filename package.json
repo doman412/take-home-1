@@ -1,0 +1,25 @@
+{
+  "name": "AddressBook",
+  "version": "1.0.0",
+  "description": "duxter-take-home",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doman412/take-home-1.git"
+  },
+  "author": "Derek",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4"
+  }
+}

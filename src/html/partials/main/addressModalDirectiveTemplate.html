@@ -1,0 +1,30 @@
+<div>
+    <form name="newAddressForm">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="first_name" type="text" ng-model="record.first" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="first_name" type="text" ng-model="record.last" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input class="validate" id="first_name" type="text" ng-model="record.phone" required>
+                        <label for="phone_number">Phone Number</label>
+                    </div>
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-action modal-close waves-effect waves-green btn-flat " ng-disabled="newAddressForm.$invalid || newAddressForm.$pristine" ng-click="add=true;">Add</button>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat " ng-click="add=false;">Cancel</button>
+        </div>
+    </form>
+</div>

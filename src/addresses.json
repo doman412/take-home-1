@@ -1,0 +1,27 @@
+[
+    {
+        "first":"Derek",
+        "last":"Arner",
+        "phone":"555-555-5555"
+    },
+    {
+        "first":"Tom",
+        "last":"Jones",
+        "phone":"555-555-5556"
+    },
+    {
+        "first":"Billy",
+        "last":"Bob",
+        "phone":"555-555-5557"
+    },
+    {
+        "first":"Rob",
+        "last":"Bobertowiscz",
+        "phone":"555-555-5558"
+    },
+    {
+        "first":"Bobby",
+        "last":"Stacks",
+        "phone":"555-555-5559"
+    }
+]

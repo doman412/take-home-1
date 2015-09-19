@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col s12">
+        <table class="responsive-table centered bordered striped">
+            <thead>
+                <tr>
+                    <th><a ng-click="changeSortCriteria('first')">First Name</a></th>
+                    <th><a ng-click="changeSortCriteria('last')">Last Name</a></th>
+                    <th><a ng-click="changeSortCriteria('phone')">Phone Number</a></th>
+                    <th ng-show="isEditing"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="addr in addresses | orderBy:sortCriteria:sortReverse" style="line-height:37px;">
+                    <!-- <address-record-item></address-record-item> -->
+                    <td>{{addr.first}}</td>
+                    <td>{{addr.last}}</td>
+                    <td>{{addr.phone}}</td>
+                    <td ng-show="isEditing"><a class="btn-floating btn-small waves-effect waves-light red" ng-click="deleteAddress(addr)"><i class="material-icons">delete</i></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
